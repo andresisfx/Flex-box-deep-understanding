@@ -119,6 +119,47 @@ h1, h2 {
     display: flex; 
 }
 .d-flex-8 .box{
-      flex-basis: 200px;
+      flex-basis: 200px;/** esta propiedad le la la opcion de crecer a la caja si el contenido es mayor al tamaño del contenedor**/
 
+}
+
+/*?Alternativapara Separar cajas con gap*/
+.d-flex-9{
+  display: flex;
+  gap: 2rem; /** gap es el espacio entre los hijos del contenedor flex**/
+}
+.d-flex-9 .box{
+  flex-basis: 200px; 
+}
+
+/*? Alternativa para separar cajas con calc*/
+.d-flex-9{
+  display: flex;
+  justify-content: space-between; /** space-between es para que las cajas se distribuyan en el espacio disponible**/
+}
+.d-flex-9 .box{
+  flex-basis: calc(33.33% - 2rem); /** las cajas ocuparán siempre la tercera parte del contenedor padre restado 20px, esto hará que se genere un espacio al gfinal del contenedor padre y se pueda hacer un space between con justify-content**/
+}
+
+/*? Alternativa para separar cajas con nth-child*/
+.d-flex-9{
+  display: flex;
+  justify-content: space-between; 
+}
+.d-flex-9 .box:nth-child(1){
+  flex-basis: calc(50% - 1rem);/** la primera caja ocupará el 50% del contenedor padre restado 10px**/
+}
+.d-flex-9 .box:nth-child(2),
+.d-flex-9 .box:nth-child(3){
+  flex-basis: calc(25% - 1rem);/** la segunda y tercera caja ocuparán el 25% menos 10px**/
+}
+
+/*! Flex-Wrap*/
+.d-flex-10{
+  display: flex;
+  flex-wrap: wrap; /** permite que los hijos se ajusten al contenedor y se muevan a la siguiente línea si no hay espacio suficiente **/
+
+}
+.d-flex-10 .box{
+  flex-basis: calc(33.33% - 2rem);
 }
